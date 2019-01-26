@@ -1,42 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PenguinManager;
 
 public class PlayerController : MonoBehaviour
 {
+    public PenguinManager.PenguinManager penguinManager;
     public Camera cam;
+    string status = "dry";
     public UnityEngine.AI.NavMeshAgent agent;
-    private bool firstUpdateRan = false;
-    public Animator anim;
-
     // Start is called before the first frame update
     void Start()
     {
-        //Animator anim = GetComponent<Animator>();
-        AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
-        anim.Play("walk", -1, Random.Range(0f, 1f));
+        string status = "dry";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!firstUpdateRan)
+        if (transform.position.y < 0.3 && status != "wet")
         {
-            agent.SetDestination(transform.position + new Vector3(0.001f, 0, 0));
-            firstUpdateRan = true;
+            status = "wet";
+            agent.Stop();
+            penguinManager.wetCount++;
         }
-
-        if (Input.GetMouseButtonDown(0))
+    
+        if (Input.GetMouseButtonDown(0) && status != "wet")
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
+           
             if(Physics.Raycast(ray, out hit))
             {
                 agent.SetDestination(hit.point);
                 
             }
+
         }
+        if (transform.position.z > 0.5)
+        {
+            penguinManager.finishCrossCount++;
+        }
+        
 
     }
 }
