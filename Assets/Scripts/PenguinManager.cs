@@ -16,6 +16,11 @@ namespace PenguinManager
         public GameObject successText;
         public GameObject failText;
         public GameObject continueButton;
+        private bool levelComplete = false;
+
+        [SerializeField] AudioClip winSound;
+        [SerializeField] AudioClip loseSound;
+        AudioSource myAudioSource;
 
         // Start is called before the first frame update
         void Start()
@@ -27,6 +32,8 @@ namespace PenguinManager
                 penguins[i] = Instantiate(penguin, penguin.transform.position + 
                 new Vector3((i % 3) * 2, 0, 2 * (int) (i / 3)), penguin.transform.rotation);
             }
+            myAudioSource = GetComponent<AudioSource>();
+            myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
         }
         void Resetlvl()
         {
@@ -40,14 +47,26 @@ namespace PenguinManager
             {
                 successText.SetActive(true);
                 continueButton.SetActive(true);
+                if (!levelComplete)
+                {
+                    //win sound
+                    AudioClip clip = winSound;
+                    myAudioSource.PlayOneShot(clip);
+                    levelComplete = true;
+                }
             }
             else if (numberOfPenguins - wetCount <= 0)
             {
                 failText.SetActive(true);
                 Invoke("Resetlvl", 5);
-            }
-            
-            
+                if (!levelComplete)
+                {
+                    //lose sound
+                    AudioClip clip = loseSound;
+                    myAudioSource.PlayOneShot(clip);
+                    levelComplete = true;
+                }
+            }           
         }
     }
 }
