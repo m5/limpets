@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: penguinManager
       value: 
       objectReference: {fileID: 494951830}
+    - target: {fileID: 1829939546, guid: 8208700626812f6f48b76ce0d59c561f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8208700626812f6f48b76ce0d59c561f, type: 3}
 --- !u!1 &170076733
@@ -916,6 +920,8 @@ MonoBehaviour:
   successText: {fileID: 476998147}
   failText: {fileID: 1985901822}
   continueButton: {fileID: 1483627458}
+  winSound: {fileID: 0}
+  loseSound: {fileID: 0}
 --- !u!4 &494951831
 Transform:
   m_ObjectHideFlags: 0
