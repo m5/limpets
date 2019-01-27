@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
             GetComponentsInChildren<Transform>()[1].localEulerAngles = new Vector3(0, 90, 0);
         }
 
-        if (Input.GetMouseButtonDown(0) && status != "wet")
+        if (Input.GetMouseButtonDown(0) && status != "wet") 
         {
+            Debug.Log("flag placed.");
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             var layerMask = (1 << Physics.IgnoreRaycastLayer);
             layerMask = ~layerMask;
@@ -52,10 +53,12 @@ public class PlayerController : MonoBehaviour
             {
                 if (useNavMesh) 
                 {
+                    Debug.Log("navmesh movement attempt made");
                     agent.SetDestination(hit.point);
                 }
                 else
                 {
+                    Debug.Log("movement attempt made.");
                     destination = hit.point;
                 }
             }

@@ -26,7 +26,7 @@ public class WaveController : MonoBehaviour
         }
         else
         {
-            transform.position = transform.position + new Vector3(-1, 0, 0) * Time.fixedDeltaTime * 10;
+            transform.position = transform.position + new Vector3(-1, 0, 0) * Time.fixedDeltaTime * 12; //changed 10 to 12... revert if things broke.
         }
     }
     public void OnCollisionEnter(Collision collision)

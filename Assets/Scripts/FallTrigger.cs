@@ -25,7 +25,7 @@ public class FallTrigger : MonoBehaviour
     void FixedUpdate()
     {
         if (makeItFall) {
-            fallingObject.transform.Translate(new Vector3(0,0,-0.2f) * Time.deltaTime);
+            fallingObject.transform.Translate(new Vector3(0,0,-0.2f) * Time.deltaTime * 2);
         }
     }
 }
