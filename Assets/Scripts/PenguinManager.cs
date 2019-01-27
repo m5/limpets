@@ -8,9 +8,9 @@ namespace PenguinManager
     {
         public GameObject penguin;
         [SerializeField]
-        public static int numberOfPenguins = 20;
+        public static int numberOfPenguins = 9;
         public static GameObject[] penguins;
-        public int wetCount;
+        public int wetCount = 0;
         public int finishCrossCount;
         public GameObject sucessText;
         public GameObject failText;
@@ -22,7 +22,8 @@ namespace PenguinManager
             penguins[0] = penguin;
             for (int i = 1; i < numberOfPenguins; i++)
             {
-                penguins[i] = Instantiate(penguin, penguin.transform.position, penguin.transform.rotation);
+                penguins[i] = Instantiate(penguin, penguin.transform.position + 
+                new Vector3((i % 3) * 2, 0, 2 * (int) (i / 3)), penguin.transform.rotation);
             }
         }
 

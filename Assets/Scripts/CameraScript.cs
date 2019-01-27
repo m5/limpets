@@ -16,7 +16,6 @@ public class CameraScript : MonoBehaviour
         float totalX = 0;
         float totalZ = 0;
 
-        Debug.Log("hre");
         for (int i = 0; i < PenguinManager.PenguinManager.numberOfPenguins; i++)
         {
             totalX += PenguinManager.PenguinManager.penguins[i].transform.position.x;
