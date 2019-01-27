@@ -11,8 +11,11 @@ public class PlayerController : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public bool useNavMesh = true;
     private Rigidbody rigidbody;
+    [SerializeField] AudioClip[] penguinSounds;
 
     private float maxSpeed = 0;
+
+    AudioSource myAudioSource;
 
     private Vector3 destination;
     // Start is called before the first frame update
@@ -22,14 +25,21 @@ public class PlayerController : MonoBehaviour
         agent.enabled = useNavMesh;
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = useNavMesh;
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 0.3)
+        if (transform.position.y < 0.3 && status != "wet")
         {
-            if (status != "wet")
+            //penguin yells
+            AudioClip clip = penguinSounds[UnityEngine.Random.Range(0, penguinSounds.Length)];
+            myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
+            myAudioSource.PlayOneShot(clip);
+
+            status = "wet";
+            if (useNavMesh)
             {
                 status = "wet";
                 if (useNavMesh)
@@ -91,6 +101,6 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-       
+
     }
 }
