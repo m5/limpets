@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Land
   - Wave
+  - penguin
   layers:
   - Default
   - TransparentFX

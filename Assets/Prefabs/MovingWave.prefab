@@ -8,10 +8,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576850427927266807}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 78ccfb67567a9fc94b66822aea3dc887, type: 3}
 --- !u!114 &1645185364
@@ -36,7 +36,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 78ccfb67567a9fc94b66822aea3dc887, type: 3}
       propertyPath: m_Name
-      value: wave
+      value: MovingWave
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 78ccfb67567a9fc94b66822aea3dc887, type: 3}
       propertyPath: m_LocalPosition.x

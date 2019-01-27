@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 1829939548}
   m_Layer: 0
   m_Name: PenguinM2
-  m_TagString: Untagged
+  m_TagString: penguin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -569,7 +569,16 @@ MonoBehaviour:
   cam: {fileID: 0}
   status: dry
   agent: {fileID: 1829939546}
-  rigidbody: {fileID: 1829939549}
+  useNavMesh: 1
+  penguinSounds:
+  - {fileID: 8300000, guid: 044371db18ef555948e3045a67b40860, type: 3}
+  - {fileID: 8300000, guid: 3ed0b88d4d714d888973d99d812c37d3, type: 3}
+  - {fileID: 8300000, guid: 190fdb1b82e4e72afb1d79fe7dc5ce68, type: 3}
+  - {fileID: 8300000, guid: 17054e8f6f8c79da7b799118852400b6, type: 3}
+  - {fileID: 8300000, guid: 982f18a3a317fae2b90322d3af6e4cdc, type: 3}
+  - {fileID: 8300000, guid: 8564586bd5658865eaaafce6287daa6a, type: 3}
+  - {fileID: 8300000, guid: 5055710ce3b14304ba1d6fe88ad904cc, type: 3}
+  - {fileID: 8300000, guid: 30a58d7fab6a2815abab31e66e813cd9, type: 3}
 --- !u!54 &1829939549
 Rigidbody:
   m_ObjectHideFlags: 0

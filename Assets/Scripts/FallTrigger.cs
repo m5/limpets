@@ -9,8 +9,10 @@ public class FallTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider c)
     {
-        Debug.Log("something landed on the iceberg");
-        makeItFall = true;
+        if(c.gameObject.tag == "penguin")
+        {
+            makeItFall = true;
+        }
     }
 
     // Start is called before the first frame update
