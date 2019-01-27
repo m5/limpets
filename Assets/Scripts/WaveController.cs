@@ -37,7 +37,7 @@ public class WaveController : MonoBehaviour
     {
         if(collider.gameObject.tag == "penguin")
         {
-            collider.gameObject.GetComponent<PlayerController>().OnWaveHit();
+            collider.gameObject.GetComponent<PlayerController>().OnGetWet();
         }
         Debug.Log("wave triggered with: " + collider.gameObject.tag);
     }
