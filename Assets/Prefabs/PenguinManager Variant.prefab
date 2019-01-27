@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5086661633540484744 stripped
+--- !u!1 &5086661633971932471 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7906944319167145467, guid: 1cc9dcbcf58c7fa45b21615562513363,
+  m_CorrespondingSourceObject: {fileID: 7906944319733925444, guid: 1cc9dcbcf58c7fa45b21615562513363,
     type: 3}
   m_PrefabInstance: {fileID: 3110976036713122675}
   m_PrefabAsset: {fileID: 0}
@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 4489549057622514901, guid: 26c2658b92a2535a8ae97fdd373892f1,
         type: 3}
       propertyPath: m_Name
-      value: PenguinManager
+      value: PenguinManager Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4489549057622514902, guid: 26c2658b92a2535a8ae97fdd373892f1,
         type: 3}
@@ -142,7 +142,7 @@ PrefabInstance:
         type: 3}
       propertyPath: failText
       value: 
-      objectReference: {fileID: 5086661633540484744}
+      objectReference: {fileID: 5086661633971932471}
     - target: {fileID: 4489549057622514902, guid: 26c2658b92a2535a8ae97fdd373892f1,
         type: 3}
       propertyPath: continueButton

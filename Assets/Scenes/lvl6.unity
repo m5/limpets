@@ -3826,6 +3826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PenguinManager Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 653191797566169182, guid: db0f668b6651fdf63ad06fe3f62e8286,
+        type: 3}
+      propertyPath: penguin
+      value: 
+      objectReference: {fileID: 1652105958}
     - target: {fileID: 653191797566169183, guid: db0f668b6651fdf63ad06fe3f62e8286,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3881,11 +3886,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 653191797566169182, guid: db0f668b6651fdf63ad06fe3f62e8286,
+    - target: {fileID: 5086661633947702002, guid: db0f668b6651fdf63ad06fe3f62e8286,
         type: 3}
-      propertyPath: penguin
-      value: 
-      objectReference: {fileID: 1652105958}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToTitle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db0f668b6651fdf63ad06fe3f62e8286, type: 3}
 --- !u!1001 &1850620832
