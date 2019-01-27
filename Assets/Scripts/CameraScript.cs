@@ -15,17 +15,25 @@ public class CameraScript : MonoBehaviour
     {
         float totalX = 0;
         float totalZ = 0;
+        float total = 0;
 
         for (int i = 0; i < PenguinManager.PenguinManager.numberOfPenguins; i++)
         {
-            totalX += PenguinManager.PenguinManager.penguins[i].transform.position.x;
-            totalZ += PenguinManager.PenguinManager.penguins[i].transform.position.z;
+            GameObject penguin = PenguinManager.PenguinManager.penguins[i];
+            if (penguin.GetComponent<PlayerController>().status == "dry")
+            {
+                totalX += penguin.transform.position.x;
+                totalZ += penguin.transform.position.z;
+                total += 1;
+            }
         }
 
-        averageX = totalX / PenguinManager.PenguinManager.numberOfPenguins;
-        averageZ = totalZ / PenguinManager.PenguinManager.numberOfPenguins;
-
-        transform.position = new Vector3( averageX, 0, averageZ);
+        if (total > 0)
+        {
+            averageX = totalX / total ;
+            averageZ = totalZ / total;
+            transform.position = new Vector3(averageX, 0, averageZ);
+        }
     }
 }
 

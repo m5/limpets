@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public PenguinManager.PenguinManager penguinManager;
     public Camera cam;
-    string status = "dry";
+    public string status = "dry";
     public UnityEngine.AI.NavMeshAgent agent;
-    public Rigidbody rigidbody;
+    public bool useNavMesh = true;
+    private Rigidbody rigidbody;
 
     private float maxSpeed = 0;
 
@@ -17,7 +18,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string status = "dry";
+        status = "dry";
+        agent.enabled = useNavMesh;
+        rigidbody = GetComponent<Rigidbody>();
+        rigidbody.isKinematic = useNavMesh;
     }
 
     // Update is called once per frame
@@ -26,20 +30,30 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < 0.3 && status != "wet")
         {
             status = "wet";
-            //agent.Stop();
+            if (useNavMesh)
+            {
+                agent.Stop();
+            }
             penguinManager.wetCount++;
         }
     
         if (Input.GetMouseButtonDown(0))// && status != "wet")
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            var layerMask = (1 << Physics.IgnoreRaycastLayer);
+            layerMask = ~layerMask;
             RaycastHit hit;
            
             if(Physics.Raycast(ray, out hit))
             {
-                //agent.SetDestination(hit.point);
-                destination = hit.point;
-                
+                if (useNavMesh) 
+                {
+                    agent.SetDestination(hit.point);
+                }
+                else
+                {
+                    destination = hit.point;
+                }
             }
 
         }
@@ -48,20 +62,21 @@ public class PlayerController : MonoBehaviour
             penguinManager.finishCrossCount++;
         }
 
-        if (destination != Vector3.zero)// && status != "wet")
+        if (destination != Vector3.zero && status != "wet" && !useNavMesh)
         {
             Vector3 diff = destination - transform.position;
             //Vector3 force = Vector3.MoveTowards(transform.position, destination, Time.fixedDeltaTime);
             //force.y = 0;
 
-            float speed = Mathf.Min(Mathf.Min(0.5f, maxSpeed), Vector3.Magnitude(diff));
-            maxSpeed = speed + 0.01f;
+            float speed = 1; // Vector3.Magnitude(diff);
+            //maxSpeed = speed + 0.1f;
             diff.y = 0;
-            transform.position += diff * speed * Time.fixedDeltaTime;
+            //transform.position += diff * speed * Time.fixedDeltaTime;
             transform.forward = Vector3.RotateTowards(transform.forward, diff, 4 * Time.fixedDeltaTime, 4 * Time.fixedDeltaTime);
-            //rigidbody.AddForce(diff * scale * Time.fixedDeltaTime, ForceMode.VelocityChange);//, ForceMode.VelocityChange);
+            rigidbody.AddForce(diff * speed * 10 * Time.fixedDeltaTime, ForceMode.VelocityChange);//, ForceMode.VelocityChange);
         }
     }
+
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collieded with: " + collision.gameObject.tag);

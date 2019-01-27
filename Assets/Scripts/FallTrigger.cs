@@ -22,8 +22,8 @@ public class FallTrigger : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (makeItFall) { 
-            fallingObject.transform.Translate(new Vector3(0,0,-1) * Time.deltaTime);
+        if (makeItFall) {
+            fallingObject.transform.Translate(new Vector3(0,0,-0.2f) * Time.deltaTime);
         }
     }
 }

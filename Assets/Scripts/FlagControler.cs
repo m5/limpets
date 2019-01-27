@@ -20,9 +20,11 @@ public class FlagControler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition + new Vector3 (x: 0 , y:  0, z: 100));
+            var layerMask = (1 << Physics.IgnoreRaycastLayer);
+            layerMask = ~layerMask;
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 transform.position = hit.point; 
 

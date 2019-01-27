@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PenguinManager
 {
@@ -12,8 +13,9 @@ namespace PenguinManager
         public static GameObject[] penguins;
         public int wetCount = 0;
         public int finishCrossCount;
-        public GameObject sucessText;
+        public GameObject successText;
         public GameObject failText;
+        public GameObject continueButton;
 
         // Start is called before the first frame update
         void Start()
@@ -26,17 +28,23 @@ namespace PenguinManager
                 new Vector3((i % 3) * 2, 0, 2 * (int) (i / 3)), penguin.transform.rotation);
             }
         }
-
+        void Resetlvl()
+        {
+            int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(sceneNumber);
+        }
         // Update is called once per frame
         void Update()
         {
             if (numberOfPenguins - wetCount <= finishCrossCount && finishCrossCount >= 1)
             {
-                sucessText.SetActive(true);
+                successText.SetActive(true);
+                continueButton.SetActive(true);
             }
             else if (numberOfPenguins - wetCount <= 0)
             {
                 failText.SetActive(true);
+                Invoke("Resetlvl", 5);
             }
             
             

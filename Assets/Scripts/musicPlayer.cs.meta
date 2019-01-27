@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 486fb8951a483df4d8336068190845ff
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Background: {fileID: 8300000, guid: 30a58d7fab6a2815abab31e66e813cd9, type: 3}
+  - audioBackground: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
