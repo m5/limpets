@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         {
             //penguin yells
             AudioClip clip = penguinSounds[UnityEngine.Random.Range(0, penguinSounds.Length)];
-    myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
+            myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
             myAudioSource.PlayOneShot(clip);
 
             status = "wet";

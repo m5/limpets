@@ -11,11 +11,6 @@ public class ContinueToNextScene : MonoBehaviour
         int nextScene = 0;
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
         nextScene = (sceneNumber + 1);
-        if(nextScene >= SceneManager.sceneCount)
-        {
-            nextScene = 0;
-        }
-
         SceneManager.LoadScene(nextScene);
     }
 
