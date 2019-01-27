@@ -10,8 +10,18 @@ public class ContinueToNextScene : MonoBehaviour
     {
         int nextScene = 0;
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
-        nextScene = ++sceneNumber;
+        nextScene = (sceneNumber + 1);
+        if(nextScene >= SceneManager.sceneCount)
+        {
+            nextScene = 0;
+        }
+
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void ToTitle()
+    {
+        SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame
