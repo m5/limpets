@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2259,6 +2259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wave
       objectReference: {fileID: 0}
+    - target: {fileID: 1576850427927266807, guid: ba4a3043d980527d984c3a17e2ff71be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wave
+      objectReference: {fileID: 0}
     - target: {fileID: 1576850427926845911, guid: ba4a3043d980527d984c3a17e2ff71be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2314,6 +2319,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1645185368, guid: ba4a3043d980527d984c3a17e2ff71be, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645185368, guid: ba4a3043d980527d984c3a17e2ff71be, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645185368, guid: ba4a3043d980527d984c3a17e2ff71be, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 78ccfb67567a9fc94b66822aea3dc887, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4a3043d980527d984c3a17e2ff71be, type: 3}
 --- !u!1001 &5862770256262977223

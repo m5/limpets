@@ -95,6 +95,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnWaveHit()
+    {
+        Debug.Log("penguin hit by wave!");
+    }
+
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collieded with: " + collision.gameObject.tag);

@@ -29,5 +29,17 @@ public class WaveController : MonoBehaviour
             transform.position = transform.position + new Vector3(-1, 0, 0) * Time.fixedDeltaTime * 10;
         }
     }
-    
+    public void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("wave collieded with: " + collision.gameObject.tag);
+    }
+    public void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag == "penguin")
+        {
+            collider.gameObject.GetComponent<PlayerController>().OnWaveHit();
+        }
+        Debug.Log("wave triggered with: " + collider.gameObject.tag);
+    }
+
 }
