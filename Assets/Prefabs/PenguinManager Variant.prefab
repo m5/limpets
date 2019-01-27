@@ -91,9 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd3b4db77ff8de42a4497b0f3160b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5086661634197826800 stripped
+--- !u!1 &5086661633337545674 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7906944319858272131, guid: 1cc9dcbcf58c7fa45b21615562513363,
+  m_CorrespondingSourceObject: {fileID: 7906944319099541689, guid: 1cc9dcbcf58c7fa45b21615562513363,
     type: 3}
   m_PrefabInstance: {fileID: 3110976036713122675}
   m_PrefabAsset: {fileID: 0}
@@ -137,7 +137,7 @@ PrefabInstance:
         type: 3}
       propertyPath: successText
       value: 
-      objectReference: {fileID: 5086661634197826800}
+      objectReference: {fileID: 5086661633337545674}
     - target: {fileID: 4489549057622514902, guid: 26c2658b92a2535a8ae97fdd373892f1,
         type: 3}
       propertyPath: failText

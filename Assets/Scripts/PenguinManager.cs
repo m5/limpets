@@ -33,7 +33,7 @@ namespace PenguinManager
                 new Vector3((i % 3) * 2, 0, 2 * (int) (i / 3)), penguin.transform.rotation);
             }
             myAudioSource = GetComponent<AudioSource>();
-            myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
+            //myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
         }
         void Resetlvl()
         {
