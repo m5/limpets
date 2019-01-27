@@ -27,17 +27,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 0.3 && status != "wet")
+        if (transform.position.y < 0.3)
         {
-            status = "wet";
-            if (useNavMesh)
+            if (status != "wet")
             {
-                agent.Stop();
+                status = "wet";
+                if (useNavMesh)
+                {
+                    agent.SetDestination(GameObject.Find("Losers").transform.position);
+                }
+                penguinManager.wetCount++;
             }
-            penguinManager.wetCount++;
+            GetComponentsInChildren<Transform>()[1].localEulerAngles = new Vector3(0, 90, 60);
         }
-    
-        if (Input.GetMouseButtonDown(0))// && status != "wet")
+        else
+        {
+            GetComponentsInChildren<Transform>()[1].localEulerAngles = new Vector3(0, 90, 0);
+        }
+
+        if (Input.GetMouseButtonDown(0) && status != "wet")
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             var layerMask = (1 << Physics.IgnoreRaycastLayer);
@@ -57,7 +65,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if (transform.position.z > 0.5)
+        if (transform.position.z > 0.5 && status != "wet")
         {
             penguinManager.finishCrossCount++;
         }
