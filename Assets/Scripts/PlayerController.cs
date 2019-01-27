@@ -88,20 +88,18 @@ public class PlayerController : MonoBehaviour
     { 
          if (status != "wet")
         {
+            Debug.Log("penguin got wet");
             //penguin yells
             AudioClip clip = penguinSounds[UnityEngine.Random.Range(0, penguinSounds.Length)];
             myAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
             myAudioSource.PlayOneShot(clip);
+            Debug.Log("penguin got wet");
 
             status = "wet";
+            penguinManager.wetCount++;
             if (useNavMesh)
-            {
-                status = "wet";
-                if (useNavMesh)
-                {
-                    agent.SetDestination(GameObject.Find("Losers").transform.position);
-                }
-penguinManager.wetCount++;
+            { 
+                agent.SetDestination(GameObject.Find("Losers").transform.position);
             }
         }
     }
